@@ -1,11 +1,16 @@
 import React from 'react'
 import LandingPage from './pages/landingPage'
+import ExampleUseState from './3.hooks/useState'
+import ExampleUseEffectClass from './3.hooks/useEffect-class'
+import ExampleUseEffect from './3.hooks/useEffect'
+import ExampleUseRef from './3.hooks/useRef'
+import ExampleUseMemo from './3.hooks/useMemo'
 
-const App = () : React.JSX.Element => {
+const App = (): React.JSX.Element => {
 
   return (
     <>
-      <LandingPage />
+      <ExampleUseRef />
     </>
   )
 }
