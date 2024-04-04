@@ -1,18 +1,28 @@
-import React from 'react'
-import { IProduct } from '../interface/product'
+import React, { useContext } from 'react'
+import { productContext } from '../context/product'
 
-const CardProduct = (props: IProduct) : React.JSX.Element => {
+const CardProduct = (): React.JSX.Element => {
+  const { product } = useContext(productContext)
+
   return (
     <div>
-      <div style={{width: "250px", backgroundColor: "red"}}>
+      <div style={{ width: "250px", backgroundColor: "red" }}>
 
-      <img src={props.image} alt='card-image' style={{width: "100%"}}/>
+        <img src={product.image} alt='card-image' style={{ width: "100%" }} />
       </div>
 
-      <div>
-        <p>{props.title}</p>
-        <p>Rp.{props.price}</p>
-      </div>
+      <ProductDescription />
+    </div>
+  )
+}
+
+const ProductDescription = () => {
+  const { product } = useContext(productContext)
+
+  return (
+    <div>
+      <p>{product.title}</p>
+      <p>Rp.{product.price}</p>
     </div>
   )
 }
